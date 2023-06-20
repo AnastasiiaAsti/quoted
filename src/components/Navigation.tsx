@@ -1,8 +1,10 @@
 'use client';
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useAuth } from "../context/AuthContext";
 
 export default function Navigation() {
+    const { user, logout } = useAuth();
     const router = useRouter();
 
     return (
@@ -25,8 +27,21 @@ export default function Navigation() {
                         </Link>
                     </li>
                     <li className="px-3">
-                        <button>Logout</button>
-                        <Link href="/login">Login</Link>
+                        {user ? (
+                            <button
+                                type="button"
+                                onClick={async () => {
+                                    try {
+                                        await logout();
+                                        await router.push("/login");
+                                    } catch (error) {
+                                        console.log(error);
+                                    }
+                                }}
+                            >Logout</button>
+                        ) : (
+                            <Link href="/login">Login</Link>
+                        )}
                     </li>
                 </ul>
             </nav>

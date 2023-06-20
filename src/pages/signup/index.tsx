@@ -30,7 +30,7 @@ const Signup: NextPage = () => {
                         <div className="mb-4">
                             <label htmlFor="email" />
                             <input
-                                className="w-full p-2"
+                                className="w-full p-2 text-sky-600"
                                 name="email"
                                 type="text"
                                 placeholder="Email"
@@ -40,7 +40,7 @@ const Signup: NextPage = () => {
                         <div className="mb-4">
                             <label htmlFor="password" />
                             <input
-                                className="w-full p-2"
+                                className="w-full p-2 text-sky-600"
                                 name="password"
                                 type="password"
                                 placeholder="Password"
