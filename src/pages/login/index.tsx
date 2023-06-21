@@ -33,7 +33,7 @@ const Login: NextPage = () => {
             <div className="mb-4">
               <label htmlFor="email" />
               <input
-                className="w-full p-2 text-sky-600"
+                className="w-full p-2 bg-gray-800 rounded-lg"
                 name="email"
                 type="text"
                 placeholder="Email"
@@ -44,7 +44,7 @@ const Login: NextPage = () => {
             <div className="mb-4">
               <label htmlFor="password" />
               <input
-                className="w-full p-2 text-sky-600"
+                className="w-full p-2 bg-gray-800 rounded-lg"
                 name="password"
                 type="password"
                 placeholder="Password"
@@ -54,7 +54,7 @@ const Login: NextPage = () => {
             </div>
             <div className="mb-4">
               <button
-                className="w-full py-2 px-6"
+                className="w-full p-6 bg-yellow-100 text-yellow-800 font-medium mr-2 px-2.5 py-2 rounded-lg dark:bg-yellow-900 dark:text-yellow-300 mb-5"
                 type="submit"
               >
                 Login
@@ -64,7 +64,7 @@ const Login: NextPage = () => {
 
           <p className="text-center">
             Need an account?{" "}
-            <Link href="/signup">
+            <Link href="/signup" className="bg-indigo-100 text-indigo-800 font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
               SignUP
             </Link>
           </p>

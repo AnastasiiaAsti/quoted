@@ -30,7 +30,7 @@ const Signup: NextPage = () => {
                         <div className="mb-4">
                             <label htmlFor="email" />
                             <input
-                                className="w-full p-2 text-sky-600"
+                                className="w-full p-2 bg-gray-800 rounded-lg"
                                 name="email"
                                 type="text"
                                 placeholder="Email"
@@ -40,7 +40,7 @@ const Signup: NextPage = () => {
                         <div className="mb-4">
                             <label htmlFor="password" />
                             <input
-                                className="w-full p-2 text-sky-600"
+                                className="w-full p-2 bg-gray-800 rounded-lg"
                                 name="password"
                                 type="password"
                                 placeholder="Password"
@@ -49,7 +49,7 @@ const Signup: NextPage = () => {
                         </div>
                         <div className="mb-4">
                             <button
-                                className="w-full py-2 px-6"
+                                className="w-full p-6 bg-indigo-100 text-indigo-800 font-medium mr-2 px-2.5 py-2 mb-5 rounded-lg dark:bg-indigo-900 dark:text-indigo-300"
                                 type="submit">SignUP
                             </button>
                         </div>

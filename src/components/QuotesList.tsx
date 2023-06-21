@@ -10,7 +10,7 @@ export default function QuotesList({quotes,loading}) {
                     ) : (
                             quotes.map((quote, index) => {
                                 return (
-                                    <div className="items-center w-80 flex md:flex-row-reverse flex-wrap bg-gray-800 rounded-lg p-5" key={index}>
+                                    <div className="items-center w-80 flex md:flex-row-reverse flex-wrap bg-gray-800 rounded-lg p-5 mb-4" key={index}>
                                         <div className="">
                                             <img className="w-20 h-20 rounded-full mr-4" src="/placeholder.png" alt="Avatar"></img>
                                         </div>

@@ -4,6 +4,7 @@ import { db } from "../utls/firebaseConfig";
 import { useState, useEffect } from 'react';
 import { collection, deleteDoc, doc, DocumentData, getDocs, limit, query, QueryDocumentSnapshot, updateDoc, where } from 'firebase/firestore';
 import QuotesList from "../components/QuotesList";
+import Link from "next/link";
 
 
 
@@ -33,6 +34,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
+      <p className="text-center mt-5">Share your quote <Link className="bg-indigo-100 text-indigo-800 font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300" href="/new-quote">here</Link></p>
       <QuotesList quotes={quotes} loading={loading} />
     </Layout>
   )
