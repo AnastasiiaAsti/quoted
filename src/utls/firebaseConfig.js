@@ -1,9 +1,10 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "@firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyDrDHI5AaS0cCw2BVSXsQktfyHPYk1gcz4',
+    apiKey: process.env.API,
     authDomain: process.env.FIREBASE_AUTH_DOMAIN,
     projectId: process.env.FIREBASE_PROJECT_ID,
     storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
@@ -12,6 +13,10 @@ const firebaseConfig = {
     measurementId: process.env.FIREBASE_MEASURE_ID
 };
 
-const app = initializeApp(firebaseConfig);
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 export const auth = getAuth(app);
+export const db = getFirestore();
+
+
+
