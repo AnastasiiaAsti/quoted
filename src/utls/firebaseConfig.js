@@ -4,13 +4,13 @@ import { getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
-    apiKey: process.env.API,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.FIREBASE_APP_ID,
-    measurementId: process.env.FIREBASE_MEASURE_ID
+    apiKey: 'AIzaSyDrDHI5AaS0cCw2BVSXsQktfyHPYk1gcz4',
+    authDomain: 'quoteverse-3990a.firebaseapp.com',
+    projectId: 'quoteverse-3990a',
+    storageBucket: 'quoteverse-3990a.appspot.com',
+    messagingSenderId: '171232950013',
+    appId: '1:171232950013:web:3ab6db27ebb5fc21b7f094',
+    measurementId: 'G-LBPWNGF0J4'
 };
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
