@@ -4,13 +4,15 @@ import { doc, setDoc } from 'firebase/firestore';
 import { useState } from 'react';
 import { db } from '../../utls/firebaseConfig';
 import { serverTimestamp } from "firebase/firestore";
-
+import { useRouter } from 'next/router';
+import Link from "next/link";
 
 const NewQuote: NextPage = () => {
     const [quote, setQuote] = useState<string>('')
     const [nameOfAuthor, setNameOfAuthor] = useState<string>('')
     const [error, setError] = useState<string>('')
-    const [message,setMessage] = useState<string>('');
+    const [message, setMessage] = useState<string>('');
+    const router = useRouter();
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
@@ -19,6 +21,7 @@ const NewQuote: NextPage = () => {
             return setError("All fields required");
         }
         addQuote();
+        // router.push('/')
     }
 
     const addQuote = async () => {
@@ -50,13 +53,13 @@ const NewQuote: NextPage = () => {
                         onSubmit={handleSubmit}>
                         {
                             error ? (
-                                <p>{error}</p>
+                                <p className="mb-3">{error}</p>
                         ) : null
                     }
                     {
                         message ? (
-                                <p>
-                                    {message}. Proceed to <a href="/">Home</a>
+                                <p className="mb-3">
+                                    {message}. <Link className="bg-indigo-100 text-indigo-800 font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300" href="/">go back</Link>
                                 </p>
                         ) : null
                     }

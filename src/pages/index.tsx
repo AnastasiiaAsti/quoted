@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Layout from "../layout";
 import { db } from "../utls/firebaseConfig";
 import { useState, useEffect } from 'react';
-import { collection, deleteDoc, doc, DocumentData, getDocs, limit, query, QueryDocumentSnapshot, updateDoc, where } from 'firebase/firestore';
+import { collection, deleteDoc, doc, DocumentData, getDocs, orderBy, query, QueryDocumentSnapshot, updateDoc, where } from 'firebase/firestore';
 import QuotesList from "../components/QuotesList";
 import Link from "next/link";
 
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
   const quotesCollection = collection(db, 'quotes');
   
   const getQuotes = async () => {
-    const quotesQuery = query(quotesCollection);
+    const quotesQuery = query(quotesCollection, orderBy("createdAt", 'desc'));
     const querySnapshot = await getDocs(quotesQuery);
     const result: QueryDocumentSnapshot<DocumentData>[] = [];
     querySnapshot.forEach((snapshot) => {
