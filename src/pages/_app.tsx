@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { AuthProvider } from "../context/AuthContext";
 import ProtectedRoute from "../components/ProtectedRoute";
 
-const protectedRoutes = ["/profile"];
+const protectedRoutes = ["/profile", '/new-quote'];
 
 function App({ Component, pageProps }: AppProps) {
     const router = useRouter();
