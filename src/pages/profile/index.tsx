@@ -28,6 +28,11 @@ const Profile: NextPage = () => {
                         }}>Delete Account
                     </button>
                 </div>
+                <div className="p-4">
+                    <div className="container mx-auto">
+                        <h1>{user.email}</h1>
+                    </div>
+                    </div>
             </main>
         </Layout>
     );

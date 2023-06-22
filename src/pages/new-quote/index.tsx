@@ -9,7 +9,6 @@ import { serverTimestamp } from "firebase/firestore";
 const NewQuote: NextPage = () => {
     const [quote, setQuote] = useState<string>('')
     const [nameOfAuthor, setNameOfAuthor] = useState<string>('')
-    
     const [error, setError] = useState<string>('')
     const [message,setMessage] = useState<string>('');
 
